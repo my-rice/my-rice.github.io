@@ -4,17 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- EDIT: update description / social preview text -->
-  <title>Davide Risi — Robotics &amp; AI Researcher</title>
-  <meta name="description" content="Davide Risi is a robotics and AI PhD researcher at IDSIA, Lugano, working on structured world models for contact-rich dexterous manipulation." />
+  <title>Davide Risi — Robotics Engineer &amp; PhD Researcher</title>
+  <meta name="description" content="Davide Risi is a PhD researcher at IDSIA USI-SUPSI (LEON Group) working on dexterous manipulation with multi-fingered robotic hands, real-time control, and compliant multi-contact interaction." />
   <meta name="author" content="Davide Risi" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Davide Risi — Robotics &amp; AI Researcher" />
-  <meta property="og:description" content="Structured world models for contact-rich dexterous manipulation." />
-  <!-- EDIT: set this to your live URL once deployed -->
+  <meta property="og:title" content="Davide Risi — Robotics Engineer &amp; PhD Researcher" />
+  <meta property="og:description" content="Real-time control and learning-based strategies for dexterous, compliant robot–environment interaction." />
   <meta property="og:url" content="https://davide-risi.github.io/" />
 
-  <!-- Inline SVG favicon: a small node/graph mark in the accent blue -->
+  <!-- Inline SVG favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312161C'/%3E%3Cg fill='none' stroke='%233B9EFF' stroke-width='1.6'%3E%3Cpath d='M9 22 L16 10 L23 22'/%3E%3C/g%3E%3Cg fill='%233B9EFF'%3E%3Ccircle cx='9' cy='22' r='2.4'/%3E%3Ccircle cx='16' cy='10' r='2.4'/%3E%3Ccircle cx='23' cy='22' r='2.4'/%3E%3C/g%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,14 +21,13 @@
 
   <style>
     /* ============================================================
-       TOKENS  —  palette derived from the given three:
-       ink #12161C · accent #3B9EFF · paper #E7ECF2
+       TOKENS  —  ink #12161C · accent #3B9EFF · paper #E7ECF2
        ============================================================ */
     :root {
       --ink:      #12161C;   /* page background            */
       --ink-2:    #171D26;   /* card / surface             */
       --ink-3:    #1E2632;   /* elevated / hover           */
-      --line:     #273040;   /* hairline borders          */
+      --line:     #273040;   /* hairline borders           */
       --paper:    #E7ECF2;   /* primary text               */
       --muted:    #97A1B2;   /* secondary text             */
       --muted-2:  #626C7C;   /* captions / tertiary        */
@@ -120,7 +117,7 @@
       display: grid; place-items: center;
       font-family: var(--font-mono); font-size: 12px; color: var(--accent); background: var(--accent-wash);
     }
-    .nav-links { display: flex; align-items: center; gap: 30px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .02em; }
     .nav-links a { color: var(--muted); transition: color .18s ease; position: relative; }
     .nav-links a:hover, .nav-links a.active { color: var(--paper); }
     .nav-links a::after {
@@ -128,8 +125,7 @@
       background: var(--accent); transition: right .22s ease;
     }
     .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
-    .nav-cv { color: var(--accent) !important; }
-    @media (max-width: 680px) { .nav-links .opt { display: none; } }
+    @media (max-width: 760px) { .nav-links .opt { display: none; } }
 
     /* ========================== ELEMENTS ========================= */
     .eyebrow {
@@ -161,7 +157,7 @@
 
     /* =========================== HERO =========================== */
     .hero { padding-top: clamp(64px, 12vw, 130px); padding-bottom: var(--section-y); }
-    .hero h1 { font-size: clamp(34px, 6.4vw, 66px); font-weight: 700; max-width: 16ch; }
+    .hero h1 { font-size: clamp(34px, 6.4vw, 62px); font-weight: 700; max-width: 18ch; }
     .hero h1 .hl { color: var(--accent); }
     .hero-lead { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 58ch; margin: 26px 0 0; }
     .hero-lead strong { color: var(--paper); font-weight: 500; }
@@ -170,26 +166,25 @@
     .hero-grid { display: grid; grid-template-columns: 1.35fr .9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
     @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
 
-    /* Signature: LPV latent-dynamics readout */
-    .readout {
-      border: 1px solid var(--line); border-radius: 14px; background:
-        linear-gradient(180deg, var(--ink-2), color-mix(in srgb, var(--ink-2) 60%, var(--ink)));
+    /* Signature: the stack panel */
+    .stack {
+      border: 1px solid var(--line); border-radius: 14px;
+      background: linear-gradient(180deg, var(--ink-2), color-mix(in srgb, var(--ink-2) 60%, var(--ink)));
       padding: 22px 24px; font-family: var(--font-mono);
       box-shadow: 0 24px 60px -30px rgba(0,0,0,.9);
     }
-    .readout .cap {
+    .stack .cap {
       display: flex; align-items: center; justify-content: space-between;
       font-size: 11.5px; letter-spacing: .05em; color: var(--muted-2); text-transform: uppercase;
       border-bottom: 1px dashed var(--line); padding-bottom: 12px; margin-bottom: 16px;
     }
-    .readout .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-wash); animation: pulse 2.4s ease-in-out infinite; }
+    .stack .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-wash); animation: pulse 2.4s ease-in-out infinite; }
     @keyframes pulse { 0%,100% { opacity:.5 } 50% { opacity:1 } }
-    .eq { font-size: clamp(15px, 2.1vw, 18px); color: var(--paper); margin: 0; }
-    .eq + .eq { margin-top: 12px; }
-    .eq .op, .eq sub, .eq sup { color: var(--accent); }
-    .eq sub, .eq sup { font-size: .68em; }
-    .readout .legend { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .readout .legend span { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+    .stack dl { margin: 0; }
+    .stack dt { font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+    .stack dd { margin: 0 0 15px; font-size: 13.5px; color: var(--paper); line-height: 1.55; }
+    .stack dd:last-of-type { margin-bottom: 0; }
+    .stack dd .sep { color: var(--muted-2); }
 
     .hero-meta {
       margin-top: 46px; padding-top: 22px; border-top: 1px solid var(--line);
@@ -218,7 +213,6 @@
     .card .idx { font-family: var(--font-mono); font-size: 12px; color: var(--muted-2); }
     .card h3 { font-size: 20px; margin: 12px 0 10px; }
     .card p { color: var(--muted); font-size: 15.5px; margin: 0; line-height: 1.6; }
-    .card p .var { font-family: var(--font-mono); color: var(--paper); font-size: .93em; }
     .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
     .tags span { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px; }
 
@@ -229,43 +223,62 @@
     .about-body p:last-child { margin-bottom: 0; }
     .about-body strong { color: var(--paper); font-weight: 500; }
 
-    .now { border: 1px solid var(--line); border-radius: 14px; background: var(--ink-2); padding: 24px; }
-    .now .cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: .05em; color: var(--muted-2); text-transform: uppercase; margin: 0 0 16px; }
-    .now ul { list-style: none; margin: 0; padding: 0; }
-    .now li { position: relative; padding-left: 22px; font-size: 15px; color: var(--paper); margin-bottom: 13px; line-height: 1.5; }
-    .now li:last-child { margin-bottom: 0; }
-    .now li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; border: 1.5px solid var(--accent); transform: rotate(45deg); }
+    .facts { border: 1px solid var(--line); border-radius: 14px; background: var(--ink-2); padding: 24px; }
+    .facts .cap { font-family: var(--font-mono); font-size: 12px; letter-spacing: .05em; color: var(--muted-2); text-transform: uppercase; margin: 0 0 16px; }
+    .facts ul { list-style: none; margin: 0; padding: 0; }
+    .facts li { position: relative; padding-left: 22px; font-size: 15px; color: var(--paper); margin-bottom: 15px; line-height: 1.5; }
+    .facts li:last-child { margin-bottom: 0; }
+    .facts li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; border: 1.5px solid var(--accent); transform: rotate(45deg); }
+    .facts li span { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 
-    /* portrait placeholder */
-    .portrait {
-      aspect-ratio: 1 / 1; border-radius: 14px; border: 1px solid var(--line);
-      background:
-        radial-gradient(120% 120% at 30% 20%, var(--accent-wash), transparent 60%), var(--ink-2);
-      display: grid; place-items: center; color: var(--muted-2); font-family: var(--font-mono);
-      font-size: 13px; text-align: center; margin-bottom: 22px; overflow: hidden;
+    /* ======================== EXPERIENCE ======================== */
+    .role {
+      display: grid; grid-template-columns: 168px 1fr; gap: 24px;
+      padding: 28px 0; border-top: 1px solid var(--line);
     }
-    .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .role:last-of-type { border-bottom: 1px solid var(--line); }
+    @media (max-width: 760px) { .role { grid-template-columns: 1fr; gap: 10px; } }
+    .role .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted-2); line-height: 1.5; }
+    .role .when b { display: block; color: var(--accent); font-weight: 500; }
+    .role h3 { font-size: 19px; }
+    .role .org { color: var(--muted); font-size: 15px; margin: 6px 0 0; }
+    .role ul { margin: 14px 0 0; padding: 0; list-style: none; }
+    .role li { position: relative; padding-left: 18px; color: var(--muted); font-size: 15px; margin-bottom: 9px; line-height: 1.6; max-width: 74ch; }
+    .role li:last-child { margin-bottom: 0; }
+    .role li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
 
-    /* =========================== WORK =========================== */
+    /* ========================== PROJECTS ========================= */
     .work-item {
-      display: grid; grid-template-columns: 130px 1fr auto; gap: 24px; align-items: baseline;
+      display: grid; grid-template-columns: 116px 1fr auto; gap: 24px; align-items: baseline;
       padding: 24px 0; border-top: 1px solid var(--line); transition: padding-left .22s ease;
     }
-    .work-item:last-child { border-bottom: 1px solid var(--line); }
+    .work-item:last-of-type { border-bottom: 1px solid var(--line); }
     .work-item:hover { padding-left: 8px; }
     @media (max-width: 720px) { .work-item { grid-template-columns: 1fr; gap: 8px; } }
     .work-item .yr { font-family: var(--font-mono); font-size: 13px; color: var(--muted-2); }
     .work-item h3 { font-size: 19px; }
-    .work-item p { color: var(--muted); font-size: 15px; margin: 8px 0 0; max-width: 62ch; }
+    .work-item p { color: var(--muted); font-size: 15px; margin: 8px 0 0; max-width: 68ch; }
     .work-item .go { font-family: var(--font-mono); font-size: 13px; color: var(--accent); white-space: nowrap; }
     .work-item .go .arw { transition: transform .2s ease; display: inline-block; }
     .work-item:hover .go .arw { transform: translate(3px,-3px); }
-    .work-note { font-family: var(--font-mono); font-size: 13px; color: var(--muted-2); margin-top: 20px; }
+
+    /* ======================== PUBLICATIONS ======================= */
+    .pub {
+      border: 1px solid var(--line); border-radius: 14px; background: var(--ink-2);
+      padding: 24px 26px; transition: border-color .22s ease, background .22s ease;
+    }
+    .pub:hover { border-color: var(--accent-line); background: var(--ink-3); }
+    .pub + .pub { margin-top: 14px; }
+    .pub h3 { font-size: 18px; line-height: 1.35; }
+    .pub .authors { color: var(--muted); font-size: 15px; margin: 10px 0 0; }
+    .pub .authors b { color: var(--paper); font-weight: 500; }
+    .pub .venue { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted-2); margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+    .pub .venue a { color: var(--accent); }
 
     /* ========================= CONTACT ========================= */
     .contact { text-align: center; }
-    .contact h2 { font-size: clamp(28px, 5vw, 48px); max-width: 18ch; margin-inline: auto; }
-    .contact p { color: var(--muted); max-width: 52ch; margin: 18px auto 34px; }
+    .contact h2 { font-size: clamp(28px, 5vw, 48px); max-width: 20ch; margin-inline: auto; }
+    .contact p { color: var(--muted); max-width: 54ch; margin: 18px auto 34px; }
     .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 
     /* ========================== FOOTER ========================= */
@@ -300,10 +313,10 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#research">research</a>
         <a href="#about" class="opt">about</a>
-        <a href="#work">work</a>
+        <a href="#experience">experience</a>
+        <a href="#projects" class="opt">projects</a>
+        <a href="#publications" class="opt">publications</a>
         <a href="#contact">contact</a>
-        <!-- EDIT: add your CV PDF to the repo, then point this link at it -->
-        <a href="#" class="nav-cv opt">cv</a>
       </nav>
     </div>
   </header>
@@ -314,36 +327,40 @@
     <section class="hero wrap">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow reveal">robotics · world models · dexterous manipulation</p>
-          <h1 class="reveal">World models that let robotic hands <span class="hl">imagine before they act.</span></h1>
+          <p class="eyebrow reveal">robotics · real-time control · dexterous manipulation</p>
+          <h1 class="reveal">Control that stays stable when robots <span class="hl">touch the real world.</span></h1>
           <p class="hero-lead reveal">
-            First-year PhD researcher at <strong>IDSIA, Lugano</strong>. I work on JEPA-style latent
-            dynamics with a structured, low-rank <strong>LPV head</strong>, so that planning for
-            high-DoF dexterous hands stays fast, stable, and physically meaningful.
+            PhD researcher at <strong>IDSIA USI-SUPSI</strong>, in the <strong>LEON Group</strong>. I work on
+            dexterous manipulation with multi-fingered robotic hands, designing real-time control and
+            learning-based strategies for compliant multi-contact interaction.
           </p>
           <div class="hero-cta reveal">
-            <a class="btn btn-primary" href="#research">Explore research <span class="arw">↗</span></a>
-            <a class="btn" href="https://github.com/davide-risi" target="_blank" rel="noopener">GitHub <span class="arw">↗</span></a>
-            <a class="btn" href="https://www.linkedin.com/in/daviderisi2001/" target="_blank" rel="noopener">LinkedIn <span class="arw">↗</span></a>
+            <a class="btn btn-primary" href="#research">Research focus <span class="arw">↗</span></a>
+            <a class="btn" href="https://github.com/my-rice" target="_blank" rel="noopener">GitHub <span class="arw">↗</span></a>
+            <a class="btn" href="https://linkedin.com/in/daviderisi2001" target="_blank" rel="noopener">LinkedIn <span class="arw">↗</span></a>
           </div>
         </div>
 
-        <!-- SIGNATURE: the LPV latent-dynamics readout -->
-        <aside class="readout reveal" aria-label="Core model: low-rank LPV latent dynamics">
-          <div class="cap"><span>latent dynamics head</span><span class="dot" aria-hidden="true"></span></div>
-          <p class="eq">x<sub>t+1</sub> <span class="op">=</span> A<sub>t</sub> x<sub>t</sub> <span class="op">+</span> B<sub>t</sub> u<sub>t</sub></p>
-          <p class="eq">A<sub>t</sub> <span class="op">=</span> I <span class="op">+</span> U V<sup>T</sup></p>
-          <p class="eq">B<sub>t</sub> <span class="op">=</span> P Q<sup>T</sup></p>
-          <div class="legend">
-            <span>low-rank</span><span>locally linear</span><span>differentiable</span><span>stable</span>
-          </div>
+        <!-- SIGNATURE: the stack panel -->
+        <aside class="stack reveal" aria-label="Technical stack">
+          <div class="cap"><span>stack</span><span class="dot" aria-hidden="true"></span></div>
+          <dl>
+            <dt>Languages</dt>
+            <dd>Python <span class="sep">·</span> C++ <span class="sep">·</span> MATLAB</dd>
+            <dt>Frameworks</dt>
+            <dd>ROS2 <span class="sep">·</span> Gazebo <span class="sep">·</span> MuJoCo <span class="sep">·</span> PyTorch <span class="sep">·</span> MoveIt2 <span class="sep">·</span> Nav2 <span class="sep">·</span> Simulink</dd>
+            <dt>Tools &amp; practice</dt>
+            <dd>Git <span class="sep">·</span> CI/CD <span class="sep">·</span> TDD <span class="sep">·</span> Scrum</dd>
+            <dt>Spoken</dt>
+            <dd>Italian (native) <span class="sep">·</span> English (C1, IELTS 7.0)</dd>
+          </dl>
         </aside>
       </div>
 
       <div class="hero-meta reveal">
-        <span><b>PhD researcher</b> · robotics &amp; ML</span>
-        <span><b>IDSIA</b> · SUPSI, Lugano</span>
-        <span><b>Lugano, CH</b> 🇨🇭</span>
+        <span><b>PhD researcher</b> · robotics</span>
+        <span><b>IDSIA USI-SUPSI</b> · LEON Group</span>
+        <span><b>Switzerland</b> 🇨🇭</span>
       </div>
     </section>
 
@@ -352,37 +369,37 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">research</p>
-          <h2>Four threads, one loop.</h2>
-          <p>From raw sensing to reliable, real-time dexterous control, structured so learning stays sample-efficient and planning stays cheap.</p>
+          <h2>Contact is the hard part.</h2>
+          <p>Manipulation and interaction break down exactly where the robot meets an uncertain environment. My work sits on that boundary: controllers that stay real-time and stable through contact, and learning that makes them general.</p>
         </div>
 
         <div class="cards stagger reveal">
           <article class="card">
             <span class="idx">01</span>
-            <h3>Structured world models</h3>
-            <p>Non-reconstructive, joint-embedding predictive models (JEPA) that learn latent dynamics directly from proprioception and touch, instead of spending capacity reconstructing pixels.</p>
-            <div class="tags"><span>JEPA</span><span>latent dynamics</span><span>self-supervised</span></div>
+            <h3>Dexterous manipulation</h3>
+            <p>Multi-fingered robotic hands performing manipulation tasks that require coordinating many contacts at once, rather than a single grasp point.</p>
+            <div class="tags"><span>multi-fingered hands</span><span>grasping</span><span>manipulation</span></div>
           </article>
 
           <article class="card">
             <span class="idx">02</span>
-            <h3>Low-rank LPV dynamics</h3>
-            <p>A locally linear dynamics head with low-rank factorization <span class="var">A=I+UV&#7488;</span>, <span class="var">B=PQ&#7488;</span>. LPV structure stays expressive without a quadratic parameter blowup, and exposes the matrices for fast gradient-based planning.</p>
-            <div class="tags"><span>LPV</span><span>low-rank</span><span>Koopman</span><span>control</span></div>
+            <h3>Compliant multi-contact interaction</h3>
+            <p>Compliance control that lets a robot share space and forces with people and objects safely, under contact conditions that are neither known in advance nor static.</p>
+            <div class="tags"><span>compliance control</span><span>HRI</span><span>force control</span></div>
           </article>
 
           <article class="card">
             <span class="idx">03</span>
-            <h3>Dexterous manipulation</h3>
-            <p>Multi-fingered, tendon-driven hands (17-DoF OrcaHand) reaching and grasping from state alone, fusing proprioception with tactile sensing for contact-rich tasks.</p>
-            <div class="tags"><span>OrcaHand</span><span>tactile</span><span>contact-rich</span></div>
+            <h3>Real-time whole-body control</h3>
+            <p>Modular C++ controllers that meet hard real-time constraints on redundant and floating-base platforms — mobile manipulators, quadrupeds carrying arms, redundant manipulators.</p>
+            <div class="tags"><span>whole-body control</span><span>real-time</span><span>redundancy</span></div>
           </article>
 
           <article class="card">
             <span class="idx">04</span>
-            <h3>Sim-to-real &amp; hardware</h3>
-            <p>Bridging simulation and a real Franka Panda + OrcaHand stack with domain randomization, asymmetric actor-critic RL, and agentic hyperparameter tuning to survive the reality gap.</p>
-            <div class="tags"><span>sim-to-real</span><span>PPO</span><span>domain randomization</span></div>
+            <h3>Teleoperation under uncertainty</h3>
+            <p>Keeping teleoperated systems stable and usable when the channel is not: high latency and jitter of the kind lunar and space missions impose, and operator interfaces in mixed reality.</p>
+            <div class="tags"><span>teleoperation</span><span>latency</span><span>mixed reality</span><span>space robotics</span></div>
           </article>
         </div>
       </div>
@@ -393,70 +410,137 @@
       <div class="wrap about-grid">
         <div class="about-body reveal">
           <p class="eyebrow">about</p>
-          <p><strong>I am a first-year PhD student in robotics and machine learning at IDSIA in Lugano, Switzerland.</strong> My research asks how robots can build internal models of contact-rich interaction that are efficient enough to learn from limited data and structured enough to plan with in real time.</p>
-          <!-- EDIT: one or two lines about your pre-PhD background (degree, focus, anything you want public) -->
-          <p>Before the PhD, <em>[add a line about your background here]</em>. I care about the seam where clean theory meets hardware that actually has to work, and I like building the tooling that makes experiments reproducible.</p>
-          <p>Outside the lab I am usually reading papers into my notes, tuning something that should already be working, or bouldering.</p>
+          <p><strong>I am a PhD researcher in robotics at IDSIA USI-SUPSI, in the LEON Group, in Switzerland.</strong> My research is on dexterous manipulation with multi-fingered robotic hands: designing real-time control and learning-based strategies for compliant multi-contact interaction.</p>
+          <p>Before the PhD I spent about a year and a half as a robotics engineer on real hardware. At the <strong>Dynamic Legged Systems Lab</strong> of the Istituto Italiano di Tecnologia I built a modular whole-body controller for a quadruped carrying a redundant manipulator, and a real-time compliance controller for mixed-reality teleoperation. Before that, at the <strong>Automatic Control Group</strong> of the University of Salerno, I designed a ROS2 control framework for teleoperation under the latency and jitter conditions relevant to lunar and space missions, validated on Franka Emika Panda, UR10, and Husky A300 platforms.</p>
+          <p>A recurring part of that work was integration: defining the software interfaces between control, perception, and mixed-reality modules across several teams, then designing the experiments that show the whole system actually holds together on hardware. I care about the seam where clean control theory meets a robot that has to work in front of stakeholders.</p>
         </div>
 
         <div class="reveal">
-          <!-- EDIT: drop a photo at images/davide.jpg and uncomment the <img> below -->
-          <div class="portrait" role="img" aria-label="Portrait placeholder">
-            <!-- <img src="images/davide.jpg" alt="Davide Risi" /> -->
-            <span>add photo<br>images/davide.jpg</span>
-          </div>
-          <div class="now">
-            <p class="cap">Currently</p>
+          <div class="facts">
+            <p class="cap">Education</p>
             <ul>
-              <li>Surveying world-model methods demonstrated on real dexterous hardware</li>
-              <li>Building <code>orca_autotune</code>, an agentic hyperparameter tuning framework</li>
-              <li>Bringing up a Franka Panda + OrcaHand experimental stack</li>
-              <li>TA for Advanced Machine Learning at SUPSI</li>
+              <li>MSc Computer Engineering, <em>cum laude</em>
+                <span>University of Salerno · Oct 2024 · GPA 29.58/30</span>
+              </li>
+              <li>BSc Computer Engineering, <em>cum laude</em>
+                <span>University of Salerno · Jul 2022 · GPA 29.51/30</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================ WORK ============================ -->
-    <section class="section" id="work">
+    <!-- ========================= EXPERIENCE ========================= -->
+    <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">selected work</p>
-          <h2>Projects &amp; publications.</h2>
-          <p>Papers will land here as the work matures. In the meantime, a few things I have been building.</p>
+          <p class="eyebrow">experience</p>
+          <h2>Where I have built things.</h2>
         </div>
 
         <div class="reveal">
-          <!-- EDIT each item: fix links, years, and text. Add or remove rows freely. -->
-          <div class="work-item">
-            <span class="yr">2026 · project</span>
+          <article class="role">
+            <p class="when"><b>Apr 2026 —</b> present</p>
             <div>
-              <h3>orca_autotune</h3>
-              <p>Agentic hyperparameter tuning for PID, MPC, and RL controllers, benchmarked in a MuJoCo-based simulation environment for the OrcaHand.</p>
+              <h3>PhD Researcher</h3>
+              <p class="org">IDSIA USI-SUPSI · LEON Group</p>
+              <ul>
+                <li>Research on robotic dexterous manipulation with multi-fingered robotic hands</li>
+                <li>Designing real-time control and learning-based strategies for compliant multi-contact interaction</li>
+              </ul>
             </div>
-            <a class="go" href="#" target="_blank" rel="noopener">repo <span class="arw">↗</span></a>
+          </article>
+
+          <article class="role">
+            <p class="when"><b>Nov 2025 —</b> Mar 2026</p>
+            <div>
+              <h3>Robotics Engineer</h3>
+              <p class="org">Istituto Italiano di Tecnologia · Dynamic Legged Systems Lab</p>
+              <ul>
+                <li>Designed and implemented a modular C++ whole-body controller meeting real-time constraints for a quadruped (Unitree B2) equipped with a redundant manipulator (Kinova Gen3)</li>
+                <li>Developed a real-time compliance controller for teleoperation in mixed reality, enabling stable and safe robot–environment interaction under uncertain and dynamic contact conditions</li>
+                <li>Led end-to-end system integration and tests across 3 teams, defining software interfaces across control, perception, and mixed reality modules; designed experiments proving robust performance to stakeholders</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <p class="when"><b>Nov 2024 —</b> Nov 2025</p>
+            <div>
+              <h3>Robotics Engineer</h3>
+              <p class="org">University of Salerno · Automatic Control Group</p>
+              <ul>
+                <li>Designed a modular C++ control framework in ROS2 meeting real-time constraints for teleoperation of robots under high-latency/jitter conditions relevant to lunar and space missions</li>
+                <li>Developed a ROS2-based compliance controller for human–robot interaction</li>
+                <li>Validated the framework on real hardware, including Franka Emika Panda, UR10, and Husky A300</li>
+                <li>Designed and conducted experiments integrating simulation and physical testbeds for manipulators and rovers</li>
+                <li>Facilitated Scrum ceremonies for a team of 4 engineers, improving project delivery and collaboration</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PROJECTS ========================== -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">projects</p>
+          <h2>Selected projects.</h2>
+          <p>Locomotion, navigation, and perception work with code on GitHub.</p>
+        </div>
+
+        <div class="reveal">
+          <div class="work-item">
+            <span class="yr">2024</span>
+            <div>
+              <h3>Humanoid Locomotion via Primitive Composition</h3>
+              <p>A data-driven control algorithm that combines model-based RL primitives, trained in PyTorch, into robust bipedal locomotion in MuJoCo while avoiding obstacles. Roughly 90% success on held-out simulation trials, with sustained locomotion beyond 20 s in most successful runs — a baseline controller could not complete the same tasks.</p>
+            </div>
+            <a class="go" href="https://github.com/my-rice/Humanoid-Locomotion-via-primitive-composition" target="_blank" rel="noopener">repo <span class="arw">↗</span></a>
           </div>
 
           <div class="work-item">
-            <span class="yr">2026 · research</span>
+            <span class="yr">2024</span>
             <div>
-              <h3>Structured JEPA world models for dexterous manipulation</h3>
-              <p>Thesis work on JEPA-style latent dynamics with a low-rank LPV head for fast, stable planning on high-DoF hands.</p>
+              <h3>Autonomous Mobile Robot Navigation</h3>
+              <p>A ROS2 navigation stack for TurtleBot 4 using QR-code signposts and Nav2 planners, with an FSM-based global planner, kidnapping recovery, and dynamic cost-map updates. The QR detection pipeline stayed reliable up to 3 m in motion under varied lighting; validated in Gazebo and on hardware, ranking 1st in race time among student teams.</p>
             </div>
-            <a class="go" href="#" target="_blank" rel="noopener">soon <span class="arw">↗</span></a>
+            <a class="go" href="https://github.com/my-rice/Autonomous-Navigation-Turtlebot4" target="_blank" rel="noopener">repo <span class="arw">↗</span></a>
           </div>
 
           <div class="work-item">
-            <span class="yr">2025 · hardware</span>
+            <span class="yr">2023</span>
             <div>
-              <h3>Franka Panda + OrcaHand bringup</h3>
-              <p>State-based control stack and unified logging for a decoupled arm and hand, built for reproducible real-robot experiments.</p>
+              <h3>ONFIRE Contest 2023</h3>
+              <p>Fine-tuned existing models and designed neural networks for fire and smoke detection on embedded cameras, reaching 84.4% mean validation accuracy — 5.4 percentage points above the FireNet baseline.</p>
             </div>
-            <a class="go" href="#" target="_blank" rel="noopener">notes <span class="arw">↗</span></a>
+            <a class="go" href="https://github.com/my-rice/Open-Fire_Contest" target="_blank" rel="noopener">repo <span class="arw">↗</span></a>
           </div>
         </div>
-        <p class="work-note">// publications will be listed here — add your first entry when it is out</p>
+      </div>
+    </section>
+
+    <!-- ======================== PUBLICATIONS ======================== -->
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">publications</p>
+          <h2>Publications.</h2>
+        </div>
+
+        <div class="reveal">
+          <article class="pub">
+            <h3>Simplifying ROS2 Controllers with a Modular Architecture for Robot-Agnostic Reference Generation</h3>
+            <p class="authors"><b>Davide Risi</b>, et al.</p>
+            <p class="venue">
+              <span>arXiv:2601.08514 · 2026</span>
+              <a href="https://arxiv.org/abs/2601.08514" target="_blank" rel="noopener">arXiv ↗</a>
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -465,14 +549,11 @@
       <div class="wrap reveal">
         <p class="eyebrow" style="justify-content:center">contact</p>
         <h2>Open to collaborations, chats, and good problems.</h2>
-        <p>Working on world models, dexterous manipulation, or structured dynamics? I would be glad to talk.</p>
+        <p>Working on dexterous manipulation, compliant control, or teleoperation? I would be glad to talk.</p>
         <div class="links">
-          <!-- EDIT: replace with your real email -->
-          <a class="btn btn-primary" href="mailto:you@example.com">Email <span class="arw">↗</span></a>
-          <a class="btn" href="https://github.com/davide-risi" target="_blank" rel="noopener">GitHub <span class="arw">↗</span></a>
-          <a class="btn" href="https://www.linkedin.com/in/daviderisi2001/" target="_blank" rel="noopener">LinkedIn <span class="arw">↗</span></a>
-          <!-- EDIT: add these when you have them -->
-          <a class="btn" href="#" target="_blank" rel="noopener">Google Scholar <span class="arw">↗</span></a>
+          <a class="btn btn-primary" href="mailto:davide.risi@supsi.ch">davide.risi@supsi.ch <span class="arw">↗</span></a>
+          <a class="btn" href="https://github.com/my-rice" target="_blank" rel="noopener">GitHub <span class="arw">↗</span></a>
+          <a class="btn" href="https://linkedin.com/in/daviderisi2001" target="_blank" rel="noopener">LinkedIn <span class="arw">↗</span></a>
         </div>
       </div>
     </section>
@@ -480,7 +561,7 @@
 
   <footer>
     <div class="wrap foot">
-      <span>© <span id="yr"></span> Davide Risi · Lugano, CH</span>
+      <span>© <span id="yr"></span> Davide Risi · Switzerland</span>
       <span>built with care · hosted on GitHub Pages</span>
     </div>
   </footer>
@@ -513,7 +594,7 @@
         }
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["research", "about", "work", "contact"].forEach((id) => {
+    ["research", "about", "experience", "projects", "publications", "contact"].forEach((id) => {
       const s = document.getElementById(id); if (s) spy.observe(s);
     });
   </script>
