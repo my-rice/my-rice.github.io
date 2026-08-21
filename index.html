@@ -4,13 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Davide Risi — Robotics Engineer &amp; PhD Researcher</title>
+  <title>Davide Risi</title>
   <meta name="description" content="Davide Risi is a PhD researcher at IDSIA USI-SUPSI (LEON Group) working on dexterous manipulation with multi-fingered robotic hands, real-time control, and compliant multi-contact interaction." />
   <meta name="author" content="Davide Risi" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Davide Risi — Robotics Engineer &amp; PhD Researcher" />
+  <meta property="og:title" content="Davide Risi" />
   <meta property="og:description" content="Real-time control and learning-based strategies for dexterous, compliant robot-environment interaction." />
   <meta property="og:url" content="https://davide-risi.github.io/" />
+  <meta property="og:image" content="https://davide-risi.github.io/resources/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Portrait of Davide Risi" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Inline SVG favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312161C'/%3E%3Cg fill='none' stroke='%233B9EFF' stroke-width='1.6'%3E%3Cpath d='M9 22 L16 10 L23 22'/%3E%3C/g%3E%3Cg fill='%233B9EFF'%3E%3Ccircle cx='9' cy='22' r='2.4'/%3E%3Ccircle cx='16' cy='10' r='2.4'/%3E%3Ccircle cx='23' cy='22' r='2.4'/%3E%3C/g%3E%3C/svg%3E" />
@@ -231,6 +236,18 @@
     .facts li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; border: 1.5px solid var(--accent); transform: rotate(45deg); }
     .facts li span { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 
+    .portrait { margin: 0 0 20px; }
+    .portrait img {
+      display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+      border: 1px solid var(--line); border-radius: 14px; background: var(--ink-2);
+      box-shadow: 0 24px 60px -34px rgba(0,0,0,.9);
+      filter: saturate(.92);
+    }
+    .portrait figcaption {
+      margin-top: 12px; font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: .04em; color: var(--muted-2);
+    }
+
     /* ======================== EXPERIENCE ======================== */
     .role {
       display: grid; grid-template-columns: 168px 1fr; gap: 24px;
@@ -311,12 +328,12 @@
         <span>Davide Risi</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#research">research</a>
-        <a href="#about" class="opt">about</a>
-        <a href="#experience">experience</a>
-        <a href="#projects" class="opt">projects</a>
-        <a href="#publications" class="opt">publications</a>
-        <a href="#contact">contact</a>
+        <a href="#research">Research</a>
+        <a href="#about" class="opt">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects" class="opt">Projects</a>
+        <a href="#publications" class="opt">Publications</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -368,7 +385,7 @@
     <section class="section" id="research">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">research</p>
+          <p class="eyebrow">Research</p>
           <h2>Contact is the hard part.</h2>
           <p>Manipulation and interaction break down exactly where the robot meets an uncertain environment. My work sits on that boundary: controllers that stay real-time and stable through contact, and learning that makes them general.</p>
         </div>
@@ -409,13 +426,18 @@
     <section class="section" id="about">
       <div class="wrap about-grid">
         <div class="about-body reveal">
-          <p class="eyebrow">about</p>
-          <p><strong>I am a PhD researcher in robotics at IDSIA USI-SUPSI, in the LEON Group, in Switzerland.</strong> My research is on dexterous manipulation with multi-fingered robotic hands: designing real-time control and learning-based strategies for compliant multi-contact interaction.</p>
+          <p class="eyebrow">About</p>
+          <p><strong>I am a PhD researcher in robotics at IDSIA USI-SUPSI, in the LEON Group, in Switzerland.</strong> My research is on dexterous manipulation with multi-fingered robotic hands: .</p>
           <p>Before the PhD I spent about a year and a half as a robotics engineer on real hardware. At the <strong>Dynamic Legged Systems Lab</strong> of the Istituto Italiano di Tecnologia I built a modular whole-body controller for a quadruped carrying a redundant manipulator, and a real-time compliance controller for mixed-reality teleoperation. Before that, at the <strong>Automatic Control Group</strong> of the University of Salerno, I designed a ROS2 control framework for teleoperation under the latency and jitter conditions relevant to lunar and space missions, validated on Franka Emika Panda, UR10, and Husky A300 platforms.</p>
           <p>A recurring part of that work was integration: defining the software interfaces between control, perception, and mixed-reality modules across several teams, then designing the experiments that show the whole system actually holds together on hardware. I care about the seam where clean control theory meets a robot that has to work in front of stakeholders.</p>
         </div>
 
         <div class="reveal">
+          <figure class="portrait">
+            <img src="resources/profile-portrait.jpg" width="640" height="800" loading="lazy" decoding="async"
+                 alt="Portrait of Davide Risi" />
+            <figcaption>Davide Risi · IDSIA USI-SUPSI, LEON Group</figcaption>
+          </figure>
           <div class="facts">
             <p class="cap">Education</p>
             <ul>
@@ -435,7 +457,7 @@
     <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">experience</p>
+          <p class="eyebrow">Experience</p>
           <h2>Where I have built things.</h2>
         </div>
 
@@ -447,7 +469,6 @@
               <p class="org">IDSIA USI-SUPSI · LEON Group</p>
               <ul>
                 <li>Research on robotic dexterous manipulation with multi-fingered robotic hands</li>
-                <li>Designing real-time control and learning-based strategies for compliant multi-contact interaction</li>
               </ul>
             </div>
           </article>
@@ -487,7 +508,7 @@
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">projects</p>
+          <p class="eyebrow">Projects</p>
           <h2>Selected projects.</h2>
           <p>Locomotion, navigation, and perception work with code on GitHub.</p>
         </div>
@@ -527,7 +548,7 @@
     <section class="section" id="publications">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">publications</p>
+          <p class="eyebrow">Publications</p>
           <h2>Publications.</h2>
         </div>
 
@@ -547,7 +568,7 @@
     <!-- ========================== CONTACT ========================== -->
     <section class="section contact" id="contact">
       <div class="wrap reveal">
-        <p class="eyebrow" style="justify-content:center">contact</p>
+        <p class="eyebrow" style="justify-content:center">Contact</p>
         <h2>Open to collaborations, chats, and good problems.</h2>
         <p>Working on dexterous manipulation? I would be glad to talk.</p>
         <div class="links">
